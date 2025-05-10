@@ -44,61 +44,42 @@
             </span>
             <h4 class="text-section">Menu</h4>
           </li>
+          <li class="nav-item {{ Route::is('approvisionnement.index') ? 'active' : '' }}">
+    <a href="{{ route('approvisionnement.index') }}">
+    <i class="fas fa-box-open"></i>
+        <p>Produits</p>
+    </a>
+</li>
 
-          <li class="nav-item {{ Route::is('proffesseur.list') ? 'active' : '' }}">
-            <a href="{{ route('proffesseur.list') }}">
-              <i class="icon-briefcase"></i>
-              <p>Professeurs</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="">
-                <i class="icon-user"></i>
-                <p>Personnels</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="">
-              <i class="icon-graduation"></i>
-              <p>Etudiants</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="">
-              <i class="icon-book-open"></i>
-              <p>Roles</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="">
-              <i class="icon-folder-alt"></i>
-              <p>Départements</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="">
-              <i class="icon-grid"></i>
-              <p>Classes</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="">
-              <i class="icon-calendar"></i>
-              <p>Matières</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="">
-              <i class="icon-note"></i>
-              <p>Notes</p>
-            </a>
-          </li>
-          <div class="divider"></div>
-          <li class="nav-item">
-            <a href="">
-              <i class="icon-information"></i>
-              <p>Mon profile</p>
-            </a>
+<li class="nav-item {{ Route::currentRouteName() == 'approvisionnement.index' ? 'active' : '' }}">
+    <a href="{{ route('approvisionnement.index') }}">
+        <i class="icon-briefcase"></i>
+        <p>Approvisionnements</p>
+    </a>
+</li>
+
+<li class="nav-item {{ Route::is('approvisionnement.index') ? 'active' : '' }}">
+    <a href="{{ route('approvisionnement.index') }}">
+        <i class="fas fa-shopping-cart"></i>
+        <p>Ventes</p>
+    </a>
+</li>
+
+
+
+<li class="nav-item {{ Route::is('approvisionnement.index') ? 'active' : '' }}">
+    <a href="{{ route('approvisionnement.index') }}">
+    <i class="fas fa-warehouse"></i>
+        <p>Etat de Stock</p>
+    </a>
+</li>
+
+<li class="nav-item {{ Route::is('approvisionnement.index') ? 'active' : '' }}">
+    <a href="{{ route('approvisionnement.index') }}">
+    <i class="fas fa-receipt"></i>
+        <p>Gestion des Reçus</p>
+    </a>
+</li>
           </li>
           <li class="nav-item">
             <form action="{{ route('logout') }}" method="POST">

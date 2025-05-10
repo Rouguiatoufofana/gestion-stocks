@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ProffesseurController;
+use App\Http\Controllers\ApprovisionnementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +26,10 @@ Route::post('/logout', function () {
     return redirect('/login'); 
 })->name('logout');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('administration.dashboard');
-Route::get('/proffesseurs', [ProffesseurController::class, 'index'])->name('proffesseur.list');
+Route::get('/', [DashboardController::class, 'index'])->name('administration.dashboard');
+Route::get('/approvisionnement', [ApprovisionnementController::class, 'index'])->name('approvisionnement.index');
+Route::put('/approvisionnement/{id}', [ApprovisionnementController::class, 'update'])->name('approvisionnement.update');
+Route::post('/approvisionnement', [ApprovisionnementController::class, 'store'])->name('approvisionnement.store');
 
 
 

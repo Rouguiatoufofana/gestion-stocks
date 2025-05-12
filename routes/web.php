@@ -31,3 +31,11 @@ Route::get('/proffesseurs', [ProffesseurController::class, 'index'])->name('prof
 
 
 
+
+//ROUTE GENERATION DES REçu
+use App\Http\Controllers\RecuController;
+
+Route::get('/recu/vente/{id}', [RecuController::class, 'vente'])->name('recu.vente');
+Route::get('/recu/approvisionnement/{id}', [RecuController::class, 'approvisionnement'])->name('recu.approvisionnement');
+
+

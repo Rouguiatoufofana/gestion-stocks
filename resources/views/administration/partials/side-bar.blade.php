@@ -68,7 +68,7 @@
 
 
 <li class="nav-item {{ Route::is('approvisionnement.index') ? 'active' : '' }}">
-    <a href="{{ route('approvisionnement.index') }}">
+    <a href="{{ route('etat.stocks') }}">
     <i class="fas fa-warehouse"></i>
         <p>Etat de Stock</p>
     </a>

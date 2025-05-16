@@ -16,6 +16,8 @@
     <noscript>
         <button class="btn btn-primary btn-lg px-4" type="submit">Filtrer</button>
     </noscript>
+
+    
 </form>
 
     </div>

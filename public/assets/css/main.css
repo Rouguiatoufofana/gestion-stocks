@@ -280,7 +280,16 @@ h6 {
     margin: 0 15px 0 0;
     padding: 6px 15px;
   }
+.sidebar .nav-item.active a {
+  background-color: #343a40;
+  color: #ffffff;
+  font-weight: bold;
+}
 
+.sidebar .nav-item a i {
+  width: 20px;
+  margin-right: 10px;
+}
   .header .navmenu {
     order: 3;
   }

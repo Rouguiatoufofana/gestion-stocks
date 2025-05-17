@@ -11,17 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ventes', function (Blueprint $table) {
-            $table->id('id_vente');
-            $table->string('reference_produit');
-            $table->integer('quantite_vente');
-            $table->decimal('prix_vente', 10, 2);
-            $table->string('nom_client');
-            $table->timestamps();
-        
-            $table->foreignId('id_user')->references('id')->on('users')->onDelete('cascade');
-
-        });
+       Schema::create('ventes', function (Blueprint $table) {
+       $table->id();
+       $table->foreignId('produit_id')->constrained()->onDelete('cascade');
+       $table->integer('quantite');
+       $table->decimal('prix_unitaire', 10, 2);
+       $table->decimal('total', 10, 2);
+       $table->date('date');
+       $table->timestamps();
+       });
         
     }
 

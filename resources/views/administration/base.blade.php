@@ -17,7 +17,7 @@
 
       @include('administration.partials.theme')
     </div>
-
+    
     @include('administration.partials.javascript_section')
   </body>
 </html>

@@ -10,18 +10,19 @@ class Produit extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nom',
-        'reference_produit',
-        'design_produit',
-        'categorie_id',
-        'prix',
-        'quantite_stock',
-        'seuil'
+        'nom','categorie_id', 'prix_vente', 'stock_actuel', 'seuil_alerte'
     ];
 
-    public function categorie()
-    {
+    public function categorie() {
         return $this->belongsTo(Categorie::class);
+    }
+
+    public function ventes() {
+        return $this->hasMany(Vente::class);
+    }
+
+    public function approvisionnements() {
+        return $this->hasMany(Approvisionnement::class);
     }
 }
 

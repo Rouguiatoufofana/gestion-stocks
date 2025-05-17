@@ -2,17 +2,16 @@
 <html lang="en">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Kaiadmin - Bootstrap 5 Admin Dashboard</title>
+    <title>Gestion de stocks</title>
     <meta
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
       name="viewport"
     />
-    <link
-      rel="icon"
-      href="{{ asset('administration/assets/img/ubo_logo.jpg') }}"
-      type="image/x-icon"
-    />
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('js/alerts.js') }}"></script>
+    @if (session('success'))
+    <meta name="success-message" content="{{ session('success') }}">
+    @endif
     <!-- Fonts and icons -->
     <script src="{{ asset('administration/assets/js/plugin/webfont/webfont.min.js') }}"></script>
     <script>

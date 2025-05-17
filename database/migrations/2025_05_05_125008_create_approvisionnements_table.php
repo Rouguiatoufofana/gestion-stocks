@@ -11,19 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('approvisionnements', function (Blueprint $table) {
-            $table->id('id_approvisionnement');
-            $table->string('reference_produit');
-            $table->integer('quantite');
-            $table->decimal('prix_achat', 10, 2);
-            $table->date('date_approvisionnement');
-            $table->string('nom_fournisseur');
-            
-            $table->timestamps();
-        
-            $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
-
-        });
+       Schema::create('approvisionnements', function (Blueprint $table) {
+       $table->id();
+       $table->foreignId('produit_id')->constrained()->onDelete('cascade');
+       $table->integer('quantite');
+       $table->decimal('prix_unitaire', 10, 2);
+       $table->decimal('total', 10, 2);
+       $table->date('date');
+       $table->timestamps();
+       });
         
     }
 

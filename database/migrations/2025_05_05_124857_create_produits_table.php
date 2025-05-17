@@ -8,16 +8,15 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('produits', function (Blueprint $table) {
-            $table->id();
-            $table->string('nom');
-            $table->string('reference_produit')->unique();
-            $table->string('design_produit')->nullable();
-            $table->foreignId('categorie_id')->constrained('categories')->onDelete('cascade');
-            $table->decimal('prix', 10, 2);
-            $table->integer('quantite_stock');
-            $table->integer('seuil')->default(5);
-            $table->timestamps();
-        });
+         $table->id();
+         $table->string('designation');
+         $table->foreignId('categorie_id')->constrained()->onDelete('cascade');
+         $table->string('description');
+         $table->decimal('prix_vente', 10, 2);
+         $table->integer('stock_actuel')->default(0);
+         $table->integer('seuil_alerte')->default(5);
+         $table->timestamps();
+   });
     }
     
 

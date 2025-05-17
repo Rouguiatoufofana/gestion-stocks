@@ -2,15 +2,15 @@
 <div class="sidebar" data-background-color="dark">
     <div class="sidebar-logo">
       <!-- Logo Header -->
-      <div class="logo-header" data-background-color="dark">
-        <a href="{{ route('administration.dashboard') }}" class="logo">
-          <img
-            src="{{ asset('administration/assets/img/ubo_logo.jpg') }}"
-            alt="navbar brand"
-            class="navbar-brand"
-            height="50"
-          />
-        </a>
+    <div class="logo-header" data-background-color="">
+  <a href="{{ route('administration.dashboard') }}" class="logo">
+    <img
+      src="{{ asset('administration/assets/img/logo_gestion_stock.png') }}"
+      alt="Logo gestion stock"
+      class="navbar-brand"
+      height="100"
+    />
+  </a>
 
         <div class="nav-toggle">
           <button class="btn btn-toggle toggle-sidebar">
@@ -44,9 +44,10 @@
             </span>
             <h4 class="text-section">Menu</h4>
           </li>
-          <li class="nav-item {{ Route::is('approvisionnement.index') ? 'active' : '' }}">
-    <a href="{{ route('approvisionnement.index') }}">
-    <i class="fas fa-box-open"></i>
+
+   <li class="nav-item {{ Route::is('produits.index') ? 'active' : '' }}">
+    <a href="{{ route('produits.index') }}">
+        <i class="fas fa-box-open"></i>
         <p>Produits</p>
     </a>
 </li>
@@ -58,12 +59,13 @@
     </a>
 </li>
 
-<li class="nav-item {{ Route::is('approvisionnement.index') ? 'active' : '' }}">
-    <a href="{{ route('approvisionnement.index') }}">
-        <i class="fas fa-shopping-cart"></i>
+<li class="nav-item {{ Route::is('ventes.index') ? 'active' : '' }}">
+    <a href="{{ route('ventes.index') }}">
+        <i class="fas fa-cash-register"></i>
         <p>Ventes</p>
     </a>
 </li>
+
 
 
 

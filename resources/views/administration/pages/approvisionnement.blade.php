@@ -10,7 +10,7 @@
 
     <main class="container-fluid px-5">
     @if(session('success'))
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         Swal.fire({
             icon: 'success',
@@ -24,17 +24,7 @@
 
         <div class="card-body">
             @if($produitsRupture->isEmpty())
-            @else
-                <div class="form-group">
-                    <label for="produit">Sélectionner un produit :</label>
-                    <select class="form-select" id="produit" name="produit">
-                        @foreach($produitsRupture as $produit)
-                            <option value="{{ $produit->id }}">
-                                {{ $produit->nom }} — Stock : {{ $produit->quantite_stock }}
-                            </option>
-                        @endforeach
-                    </select>
-                </div>
+            
             @endif
         </div>
     </div>
@@ -91,16 +81,34 @@
         <form action="{{ route('approvisionnement.store') }}" method="POST" class="modal-content">
             @csrf
             <input type="hidden" name="produit_id" value="{{ $produit->id }}">
+
             <div class="modal-header">
                 <h5 class="modal-title" id="modalLabel{{ $produit->id }}">Approvisionner : {{ $produit->nom }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
             </div>
+
             <div class="modal-body">
                 <div class="mb-3">
                     <label for="quantite{{ $produit->id }}" class="form-label">Quantité à ajouter</label>
                     <input type="number" name="quantite" id="quantite{{ $produit->id }}" class="form-control" min="1" required>
                 </div>
+
+                <div class="mb-3">
+                    <label for="nom_fournisseur{{ $produit->id }}" class="form-label">Nom du fournisseur</label>
+                    <input type="text" name="nom_fournisseur" id="nom_fournisseur{{ $produit->id }}" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="prix_achat{{ $produit->id }}" class="form-label">Prix d'achat (GNF)</label>
+                    <input type="number" step="0.01" name="prix_achat" id="prix_achat{{ $produit->id }}" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="date_approvisionnement{{ $produit->id }}" class="form-label">Date d'approvisionnement</label>
+                    <input type="date" name="date_approvisionnement" id="date_approvisionnement{{ $produit->id }}" class="form-control" required>
+                </div>
             </div>
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
                 <button type="submit" class="btn btn-primary">Valider</button>
@@ -109,6 +117,5 @@
     </div>
 </div>
 
-</div>
 @endforeach
-@endsection
+@endsection 

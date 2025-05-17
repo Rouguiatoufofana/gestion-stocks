@@ -46,6 +46,7 @@
           </li>
           <li class="nav-item {{ Route::is('approvisionnement.index') ? 'active' : '' }}">
     <a href="{{ route('approvisionnement.index') }}">
+      <a href="{{ route('produits.index') }}">
     <i class="fas fa-box-open"></i>
         <p>Produits</p>
     </a>

@@ -3,7 +3,7 @@
     <div class="sidebar-logo">
       <!-- Logo Header -->
       <div class="logo-header" data-background-color="dark">
-        <a href="{{ route('administration.dashboard') }}" class="logo">
+        <a href="{{ route('administration.pages.dashboard') }}" class="logo">
           <img
             src="{{ asset('administration/assets/img/ubo_logo.jpg') }}"
             alt="navbar brand"
@@ -32,7 +32,7 @@
       <div class="sidebar-content">
         <ul class="nav nav-secondary">
           <li class="nav-item {{ Route::is('administration.dashboard') ? 'active' : '' }}">
-            <a href="{{ route('administration.dashboard') }}">
+            <a href="{{ route('administration.pages.dashboard') }}">
               <i class="fas fa-home"></i>
               <p>Tableau de bord</p>
             </a>
